@@ -1,0 +1,35 @@
+{
+  "name": "gregslist-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "debug": "node index.js",
+    "start": "node index.js",
+    "dev": "node index.js",
+    "setup": "npm install"
+  },
+  "author": "Boise Codeworks",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.0"
+  },
+  "engines": {
+    "node": "^12.0.0",
+    "npm": "^6.5.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EricRooney/greglist-server-winter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EricRooney/greglist-server-winter/issues"
+  },
+  "homepage": "https://github.com/EricRooney/greglist-server-winter#readme",
+  "description": "gregslist-server"
+}
