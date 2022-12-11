@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
-import Car from "../models/Car";
+import Score from "../models/Score";
 import ApiError from "../utils/ApiError";
 
-const _repository = mongoose.model("Car", Car);
+const _repository = mongoose.model("Score", Score);
 
-class CarService {
+class ScoreService {
   async getAll() {
     return await _repository.find({});
   }
@@ -23,7 +23,7 @@ class CarService {
 
   async edit(id, update) {
     let data = await _repository.findOneAndUpdate({ _id: id }, update, {
-      new: true
+      new: true,
     });
     if (!data) {
       throw new ApiError("Invalid ID", 400);
@@ -39,5 +39,5 @@ class CarService {
   }
 }
 
-const carService = new CarService();
-export default carService;
+const scoreService = new ScoreService();
+export default scoreService;

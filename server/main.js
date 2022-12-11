@@ -1,9 +1,9 @@
 // NOTE this is essentially the main portion of our server
 import express from "express";
-import cors from "cors";
+import scores from "scores";
 import bp from "body-parser";
 import DbContext from "./db/dbConfig";
-import CarController from "./controllers/CarsController";
+import ScoreController from "./controllers/ScoresController";
 
 const port = process.env.PORT || 3000;
 
@@ -25,7 +25,7 @@ var corsOptions = {
   },
   credentials: true,
 };
-server.use(cors(corsOptions));
+server.use(scores(corsOptions));
 
 //NOTE we are giving our server the bodyparser middleware. This middleware gives use the ability to pass information into our server as a request and parse it from JSON back into objects.
 server.use(bp.urlencoded({ extended: true }));
@@ -35,7 +35,7 @@ server.use(bp.json());
 
 //NOTE next we want to register all our routes(doorways that can be accessed in our app)
 
-server.use("/api/cars", new CarController().router);
+server.use("/api/scores", new ScoreController().router);
 
 //NOTE Everything below this line always stays the same
 

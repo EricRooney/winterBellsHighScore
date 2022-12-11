@@ -1,7 +1,7 @@
 import express from "express";
-import carService from "../services/CarService";
+import scoreService from "../services/ScoreService";
 
-export default class CarController {
+export default class ScoreController {
   constructor() {
     this.router = express
       .Router()
@@ -15,7 +15,7 @@ export default class CarController {
 
   async getAll(req, res, next) {
     try {
-      let data = await carService.getAll();
+      let data = await scoreService.getAll();
       return res.send(data);
     } catch (error) {
       next(error);
@@ -24,7 +24,7 @@ export default class CarController {
 
   async getById(req, res, next) {
     try {
-      let data = await carService.getById(req.params.id);
+      let data = await scoreService.getById(req.params.id);
       return res.send(data);
     } catch (error) {
       next(error);
@@ -33,7 +33,7 @@ export default class CarController {
 
   async create(req, res, next) {
     try {
-      let data = await carService.create(req.body);
+      let data = await scoreService.create(req.body);
       return res.status(201).send(data);
     } catch (error) {
       next(error);
@@ -42,7 +42,7 @@ export default class CarController {
 
   async edit(req, res, next) {
     try {
-      let data = await carService.edit(req.params.id, req.body);
+      let data = await scoreService.edit(req.params.id, req.body);
       return res.send(data);
     } catch (error) {
       next(error);
@@ -51,7 +51,7 @@ export default class CarController {
 
   async delete(req, res, next) {
     try {
-      await carService.delete(req.params.id);
+      await scoreService.delete(req.params.id);
       return res.send("Successfully Deleted");
     } catch (error) {
       next(error);
