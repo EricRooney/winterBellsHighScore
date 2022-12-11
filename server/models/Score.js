@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const Score = new Schema(
   {
     user: { type: String, required: true, maxlength: 25 },
-    score: { type: Number, min: 0, required: true },
+    score: { type: String, minlength: 2, required: true },
   },
   { timestamps: true, toJSON: { virtuals: true } }
 );

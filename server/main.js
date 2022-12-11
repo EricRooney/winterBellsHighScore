@@ -1,6 +1,6 @@
 // NOTE this is essentially the main portion of our server
 import express from "express";
-import scores from "scores";
+import cors from "cors";
 import bp from "body-parser";
 import DbContext from "./db/dbConfig";
 import ScoreController from "./controllers/ScoresController";
@@ -25,7 +25,7 @@ var corsOptions = {
   },
   credentials: true,
 };
-server.use(scores(corsOptions));
+server.use(cors(corsOptions));
 
 //NOTE we are giving our server the bodyparser middleware. This middleware gives use the ability to pass information into our server as a request and parse it from JSON back into objects.
 server.use(bp.urlencoded({ extended: true }));
